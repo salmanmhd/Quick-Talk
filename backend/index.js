@@ -15,7 +15,12 @@ const io = new Server(server, {
   },
 });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ['https://quick-talk-25wr.vercel.app', 'http://localhost:5173'],
+    methods: ['GET', 'POST'],
+  })
+);
 
 app.get('/', (req, res) => {
   res.send('backend running');
