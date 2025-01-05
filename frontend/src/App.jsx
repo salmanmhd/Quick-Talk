@@ -12,9 +12,7 @@ function App() {
   const socketRef = useRef(null);
 
   useEffect(() => {
-    socketRef.current = io(
-      'https://quick-talk-agd6-9d79x9vo3-md-salmans-projects.vercel.app/'
-    );
+    socketRef.current = io('https://quick-talk-sigma.vercel.app/');
 
     socketRef.current.on('mg', (data) => {
       console.log(data);
