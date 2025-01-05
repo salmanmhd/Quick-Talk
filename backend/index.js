@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ['https://quick-talk-25wr.vercel.app', 'http://localhost:5173'],
+    origin: 'https://quick-talk-25wr.vercel.app',
     methods: ['GET', 'POST'],
   })
 );
@@ -15,7 +15,7 @@ app.use(
 app.use((req, res, next) => {
   res.header(
     'Access-Control-Allow-Origin',
-    'https://quick-talk-25wr.vercel.app, http://localhost:5173'
+    'https://quick-talk-25wr.vercel.app'
   );
   res.header(
     'Access-Control-Allow-Headers',
