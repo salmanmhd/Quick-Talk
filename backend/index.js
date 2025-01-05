@@ -1,19 +1,9 @@
-import http from 'http';
 import express from 'express';
-import { Server } from 'socket.io';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const PORT = process.env.PORT || 3000;
 const app = express();
-const server = http.createServer(app);
-const io = new Server(server, {
-  cors: {
-    origin: ['https://quick-talk-25wr.vercel.app/', 'http://localhost:5173'],
-    methods: ['GET', 'POST'],
-  },
-});
 
 app.use(
   cors({
@@ -23,22 +13,9 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-  res.send('backend running');
+  res.send('Backend running on Vercel with WebSocket');
 });
 
-io.on('connection', (socket) => {
-  console.log('a user connected', socket.id);
-
-  socket.on('msg', (data) => {
-    console.log(data);
-    io.emit('mg', data);
-  });
-
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-  });
-});
-
-server.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(3000, () => {
+  console.log('Express server is running');
 });
