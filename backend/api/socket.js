@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   const server = http.createServer((req, res) => res.end('Socket server'));
   const io = new Server(server, {
     cors: {
-      origin: 'https://quick-talk-sigma.vercel.app',
+      origin: 'https://quick-talk-25wr.vercel.app/',
       methods: ['GET', 'POST'],
     },
   });

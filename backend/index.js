@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'https://quick-talk-25wr.vercel.app',
+    origin: 'https://quick-talk-25wr.vercel.app/',
     methods: ['GET', 'POST'],
   })
 );
