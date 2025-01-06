@@ -12,7 +12,7 @@ function App() {
   const socketRef = useRef(null);
 
   useEffect(() => {
-    socketRef.current = io('https://quick-talk-25wr.vercel.app');
+    socketRef.current = io('https://quick-talk-smtd.onrender.com');
 
     socketRef.current.on('mg', (data) => {
       console.log(data);
